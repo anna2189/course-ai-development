@@ -1,0 +1,316 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Law for Everyone — Legal Help Made Simple</title>
+  <meta name="description" content="Law for Everyone — approachable, affordable legal services for individuals and small businesses. Book a free consultation." />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    :root{
+      --primary:#021F59; /* Deep blue */
+      --primary-700:#01224f;
+      --accent:#1A73E8;
+      --bg:#ffffff;
+      --muted:#f3f5f8;
+      --text:#0f172a;
+      --text-muted:#475569;
+      --ring:rgba(2,31,89,.35);
+      --radius:18px;
+      --shadow:0 10px 30px rgba(2,31,89,.15);
+    }
+    *{box-sizing:border-box}
+    html,body{height:100%}
+    body{
+      margin:0;
+      font-family:Montserrat, system-ui, -apple-system, Segoe UI, Roboto, "Helvetica Neue", Arial, "Noto Sans", "Apple Color Emoji", "Segoe UI Emoji";
+      color:var(--text);
+      background:var(--bg);
+      line-height:1.6;
+    }
+    a{color:var(--primary); text-decoration:none}
+    img{max-width:100%; display:block}
+    .container{width:min(1100px, 92%); margin-inline:auto}
+
+    /* Header */
+    header{
+      position:sticky; top:0; z-index:50; backdrop-filter:saturate(180%) blur(8px);
+      background:color-mix(in oklab, white 70%, transparent);
+      border-bottom:1px solid #eaeef5; 
+    }
+    .nav{display:flex; align-items:center; justify-content:space-between; padding:14px 0}
+    .brand{display:flex; align-items:center; gap:10px; font-weight:700; letter-spacing:.2px}
+    .brand-mark{width:36px; height:36px; border-radius:10px; background:linear-gradient(135deg,var(--primary), #224a9a); display:grid; place-items:center; box-shadow:var(--shadow)}
+    .brand-mark svg{fill:#fff}
+    .nav a.button{padding:.7rem 1rem; border-radius:12px; background:var(--primary); color:#fff; font-weight:600; box-shadow:var(--shadow)}
+    .nav a.button:hover{background:#05205a}
+
+    /* Hero */
+    .hero{
+      position:relative; isolation:isolate; overflow:hidden; color:#fff;
+      background:
+        radial-gradient(1200px 600px at 80% -10%, #2a4ea6 0%, transparent 60%),
+        linear-gradient(180deg, #0a255e, #021f59);
+    }
+    .hero::after{
+      content:""; position:absolute; inset:-10% -20% auto -20%; height:120%; z-index:-1;
+      background:radial-gradient(600px 300px at 20% 10%, rgba(255,255,255,.08), transparent 70%),
+                 radial-gradient(600px 400px at 80% 60%, rgba(255,255,255,.08), transparent 70%);
+    }
+    .hero-wrap{display:grid; grid-template-columns:1fr; gap:28px; padding:68px 0 64px}
+    .kicker{display:inline-block; background:rgba(255,255,255,.12); padding:.35rem .65rem; border-radius:999px; font-size:.85rem}
+    .hero h1{margin:8px 0 10px; font-size:clamp(2rem, 3.8vw + .8rem, 3rem); line-height:1.15}
+    .hero p{margin:0 0 18px; color:#e6edff; max-width:60ch}
+    .cta-row{display:flex; gap:12px; flex-wrap:wrap}
+    .btn{display:inline-flex; align-items:center; gap:.5rem; padding:.9rem 1.1rem; border-radius:14px; font-weight:600; border:1px solid transparent; cursor:pointer}
+    .btn-primary{background:#ffffff; color:var(--primary)}
+    .btn-primary:hover{background:#f2f6ff}
+    .btn-ghost{background:transparent; border-color:rgba(255,255,255,.35); color:#fff}
+    .btn-ghost:hover{background:rgba(255,255,255,.08)}
+
+    /* Trust badges */
+    .trust{display:flex; gap:22px; align-items:center; flex-wrap:wrap; margin-top:8px; color:#d9e3ff; font-size:.9rem}
+    .trust .seal{display:flex; align-items:center; gap:10px}
+
+    /* Panels */
+    section{padding:64px 0}
+    .grid-3{display:grid; grid-template-columns:1fr; gap:22px}
+    @media(min-width:760px){.grid-3{grid-template-columns:repeat(3,1fr)}}
+    .card{background:var(--bg); border:1px solid #e7ecf5; border-radius:var(--radius); padding:22px; box-shadow:var(--shadow)}
+    .card h3{margin:.2rem 0 .4rem}
+    .muted{color:var(--text-muted)}
+
+    /* About */
+    .about{display:grid; grid-template-columns:1fr; gap:28px}
+    @media(min-width:920px){.about{grid-template-columns:1.2fr .8fr}}
+    .about .photo{border-radius:var(--radius); overflow:hidden; box-shadow:var(--shadow)}
+
+    /* Services */
+    .service{display:flex; gap:14px; align-items:flex-start}
+    .icon{flex:0 0 42px; width:42px; height:42px; border-radius:12px; background:var(--muted); display:grid; place-items:center}
+
+    /* Testimonials */
+    .testimonials{background:var(--muted)}
+    .quote{padding:22px; border-radius:var(--radius); background:#fff; border:1px solid #e7ecf5; box-shadow:var(--shadow)}
+    .quote p{margin:0}
+    .quote .by{margin-top:10px; font-weight:600}
+
+    /* CTA block */
+    .cta{background:linear-gradient(135deg, var(--primary), #204a98); color:#fff; border-radius:var(--radius); padding:28px; display:grid; gap:12px; align-items:center; box-shadow:var(--shadow)}
+    @media(min-width:820px){.cta{grid-template-columns:1.4fr .6fr}}
+
+    /* Contact */
+    form{display:grid; gap:14px}
+    label{font-weight:600; font-size:.95rem}
+    input, textarea{width:100%; padding:.85rem 1rem; border-radius:12px; border:1px solid #d7deea; background:#fff; font:inherit}
+    input:focus, textarea:focus{outline:3px solid var(--ring); border-color:var(--primary)}
+    textarea{min-height:120px; resize:vertical}
+    .submit{background:var(--primary); color:#fff; border:none; cursor:pointer; font-weight:700}
+    .submit:hover{background:var(--primary-700)}
+
+    /* Footer */
+    footer{background:#0e1a36; color:#c9d4ff}
+    footer .container{padding:28px 0}
+    .footgrid{display:grid; gap:16px}
+    @media(min-width:760px){.footgrid{grid-template-columns:1fr auto auto}}
+    .footgrid a{color:#c9d4ff}
+
+    /* Utilities */
+    .section-title{font-size:clamp(1.4rem, 2.2vw + .6rem, 2rem); margin:0 0 10px}
+    .lead{font-size:1.05rem}
+    .badge{display:inline-flex; align-items:center; gap:8px; padding:.35rem .6rem; border-radius:999px; border:1px solid #e7ecf5; background:#fff}
+    .sr-only{position:absolute; width:1px; height:1px; padding:0; margin:-1px; overflow:hidden; clip:rect(0,0,0,0); border:0}
+  </style>
+</head>
+<body>
+  <header>
+    <div class="container nav" role="navigation" aria-label="Main">
+      <div class="brand">
+        <span class="brand-mark" aria-hidden="true">
+          <!-- Scales of justice icon -->
+          <svg width="20" height="20" viewBox="0 0 24 24" role="img" aria-label="Logo">
+            <path d="M12 2a1 1 0 0 1 1 1v2h2a1 1 0 1 1 0 2h-2v4.126l4.553 6.829A3.5 3.5 0 0 1 14 22h-4a3.5 3.5 0 0 1-3.553-3.045L11 11.126V7H9a1 1 0 1 1 0-2h2V3a1 1 0 0 1 1-1Zm7.5 7.5 2.25 3.75H17.25L19.5 9.5Zm-15 0L6.75 13H2.25L4.5 9.5Z"/>
+          </svg>
+        </span>
+        <span>Law for Everyone</span>
+      </div>
+      <a class="button" href="#contact">Book Free Consultation</a>
+    </div>
+  </header>
+
+  <section class="hero">
+    <div class="container hero-wrap">
+      <span class="kicker">Approachable. Transparent. On your side.</span>
+      <h1>Legal Help Made Simple</h1>
+      <p class="lead">We make everyday legal issues clear and manageable for individuals and small businesses. Plain language, fair pricing, and a team that actually calls you back.</p>
+      <div class="cta-row">
+        <a class="btn btn-primary" href="#contact">Book a Free Consultation</a>
+        <a class="btn btn-ghost" href="#services">Explore Services</a>
+      </div>
+      <div class="trust" aria-label="Trust badges">
+        <span class="seal">🛡️ Flat-fee & upfront pricing</span>
+        <span class="seal">⏱️ Fast response</span>
+        <span class="seal">🌐 English / Français</span>
+      </div>
+    </div>
+  </section>
+
+  <main>
+    <!-- About -->
+    <section id="about">
+      <div class="container about">
+        <div>
+          <h2 class="section-title">Law, without the legalese</h2>
+          <p class="lead">Our mission is to make quality legal services accessible to everyone. We explain your options in plain terms, help you decide quickly, and keep costs under control.</p>
+          <ul>
+            <li>Clear scope and pricing before any work begins.</li>
+            <li>Video, phone, or in‑person meetings—your choice.</li>
+            <li>Digital document signing and secure file sharing.</li>
+          </ul>
+          <div class="badge" aria-label="Languages available">
+            🌐 We serve clients in <strong>English</strong> and <strong>French</strong>
+          </div>
+        </div>
+        <div class="photo" aria-hidden="true">
+          <!-- Decorative placeholder graphic -->
+          <svg viewBox="0 0 800 600" width="100%" height="100%" preserveAspectRatio="xMidYMid slice" role="img" aria-label="Decorative illustration">
+            <defs>
+              <linearGradient id="g" x1="0" x2="1" y1="0" y2="1">
+                <stop offset="0%" stop-color="#204a98"/>
+                <stop offset="100%" stop-color="#021f59"/>
+              </linearGradient>
+            </defs>
+            <rect width="800" height="600" fill="url(#g)"/>
+            <g fill="#ffffff" opacity="0.08">
+              <circle cx="620" cy="120" r="110"/>
+              <circle cx="200" cy="420" r="160"/>
+              <rect x="440" y="340" width="220" height="140" rx="20"/>
+            </g>
+          </svg>
+        </div>
+      </div>
+    </section>
+
+    <!-- Services -->
+    <section id="services">
+      <div class="container">
+        <h2 class="section-title">How we can help</h2>
+        <p class="muted">Three straightforward service areas. Each includes a clear scope, timeline, and pricing options.</p>
+        <div class="grid-3" style="margin-top:14px">
+          <article class="card service">
+            <div class="icon" aria-hidden="true">⚖️</div>
+            <div>
+              <h3>Family Law</h3>
+              <p class="muted">Separation agreements, parenting plans, uncontested divorce. Sensitive guidance with firm advocacy.</p>
+              <p><a href="#contact">Learn more →</a></p>
+            </div>
+          </article>
+          <article class="card service">
+            <div class="icon" aria-hidden="true">💼</div>
+            <div>
+              <h3>Employment</h3>
+              <p class="muted">Severance reviews, workplace issues, contracts. Know your rights before you sign—or quit.</p>
+              <p><a href="#contact">Learn more →</a></p>
+            </div>
+          </article>
+          <article class="card service">
+            <div class="icon" aria-hidden="true">🏢</div>
+            <div>
+              <h3>Small Business</h3>
+              <p class="muted">Incorporation, contracts, website policies, compliance checkups. Practical help for real‑world operations.</p>
+              <p><a href="#contact">Learn more →</a></p>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- Testimonials -->
+    <section class="testimonials" aria-label="Client testimonials">
+      <div class="container">
+        <h2 class="section-title">Clients say it best</h2>
+        <div class="grid-3" style="margin-top:14px">
+          <blockquote class="quote">
+            <p>“Everything was explained in simple terms. I felt in control the whole time.”</p>
+            <div class="by">— Maya R.</div>
+          </blockquote>
+          <blockquote class="quote">
+            <p>“Fast, fair, and no surprises on the bill. Exactly what I needed.”</p>
+            <div class="by">— Daniel P.</div>
+          </blockquote>
+          <blockquote class="quote">
+            <p>“They answered the phone and got me a same‑day consult. Highly recommend.”</p>
+            <div class="by">— L. Chen</div>
+          </blockquote>
+        </div>
+      </div>
+    </section>
+
+    <!-- CTA band -->
+    <section>
+      <div class="container cta">
+        <div>
+          <h2 class="section-title" style="margin:0">Ready to talk?</h2>
+          <p style="margin:6px 0 0">Book a free 15‑minute call to understand your options and next steps. No obligation.</p>
+        </div>
+        <div style="justify-self:end; align-self:center">
+          <a class="btn btn-primary" href="#contact" aria-label="Jump to contact form">Get Started</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Contact -->
+    <section id="contact" aria-labelledby="contact-title">
+      <div class="container">
+        <h2 id="contact-title" class="section-title">Contact us</h2>
+        <p class="muted">Fill this out and we’ll get back to you promptly.</p>
+        <form method="post" action="#" onsubmit="event.preventDefault(); alert('Thanks! We\'ll be in touch shortly.');">
+          <div>
+            <label for="name">Name</label>
+            <input id="name" name="name" type="text" placeholder="Your full name" required />
+          </div>
+          <div>
+            <label for="email">Email</label>
+            <input id="email" name="email" type="email" placeholder="you@example.com" required />
+          </div>
+          <div>
+            <label for="topic">Topic</label>
+            <input id="topic" name="topic" type="text" placeholder="e.g., Severance review" />
+          </div>
+          <div>
+            <label for="message">Message</label>
+            <textarea id="message" name="message" placeholder="Briefly describe your situation" required></textarea>
+          </div>
+          <button class="btn submit" type="submit">Send message</button>
+          <p class="muted" aria-live="polite">By submitting, you consent to us contacting you about your inquiry. We respect your privacy.</p>
+        </form>
+      </div>
+    </section>
+  </main>
+
+  <footer role="contentinfo">
+    <div class="container footgrid">
+      <div>
+        <strong>Law for Everyone</strong><br/>
+        123 Main Street, Suite 400 · Your City, QC<br/>
+        <a href="tel:+10000000000" aria-label="Call">(000) 000‑0000</a> · <a href="mailto:hello@lawforeveryone.com">hello@lawforeveryone.com</a>
+      </div>
+      <div>
+        <div><a href="#about">About</a></div>
+        <div><a href="#services">Services</a></div>
+        <div><a href="#contact">Contact</a></div>
+      </div>
+      <div style="text-align:right">
+        © <span id="year"></span> Law for Everyone. All rights reserved.
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    // Update year automatically
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
