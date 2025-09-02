@@ -1,158 +1,181 @@
-<!doctype html>
-<html lang="en">
-<head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <link rel="icon" href="https://cdn-icons-png.flaticon.com/512/3135/3135715.png" type="image/png">
-  <title>Law for Everyone — Legal Help Made Simple</title>
-  <link rel="canonical" href="http://localhost:3000/index.html" />
-  <meta name="description" content="Law for Everyone — approachable, affordable legal services for individuals and small businesses. Book a free consultation." />
-  <meta property="og:title" content="Law for Everyone — Legal Help Made Simple" />
-  <meta property="og:description" content="Law for Everyone — approachable, affordable legal services for individuals and small businesses. Book a free consultation." />
-  <meta property="og:image" content="https://images.unsplash.com/photo-1555374018-13a8994ab246?auto=format&fit=crop&w=1600&q=80" />
-  <meta property="og:url" content="http://localhost:3000/index.html" />
-  <meta name="twitter:card" content="summary_large_image" />
-  <meta name="twitter:title" content="Law for Everyone — Legal Help Made Simple" />
-  <meta name="twitter:description" content="Law for Everyone — approachable, affordable legal services for individuals and small businesses. Book a free consultation." />
-  <meta name="twitter:image" content="https://images.unsplash.com/photo-1555374018-13a8994ab246?auto=format&fit=crop&w=1600&q=80" />
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet">
-  <style>
-    :root{
-      --primary:#021F59;
-      --accent:#1A73E8;
-      --bg:#ffffff;
-      --muted:#f3f5f8;
-      --text:#0f172a;
-      --radius:18px;
-      --shadow:0 10px 30px rgba(2,31,89,.15);
-    }
-    *{box-sizing:border-box}
-    html,body{height:100%;margin:0;font-family:Montserrat, sans-serif;color:var(--text);background:var(--bg);line-height:1.6;scroll-behavior:smooth}
-    img{max-width:100%;display:block;border-radius:var(--radius)}
-    a{text-decoration:none;color:var(--primary)}
-    .container{width:min(1100px, 92%);margin-inline:auto}
-
-    header{position:sticky;top:0;background:#fff;border-bottom:1px solid #eaeef5;box-shadow:0 2px 8px rgba(0,0,0,.05);z-index:50}
-    .nav{display:flex;align-items:center;justify-content:space-between;padding:14px 0}
-    .brand{display:flex;align-items:center;gap:10px;font-weight:700}
-    .brand img{height:40px;width:auto}
-    .nav a.button{padding:.7rem 1rem;border-radius:12px;background:red;color:#fff;font-weight:600;transition:all .3s ease}
-    .nav a.button:hover{background:darkred;transform:translateY(-2px)}
-
-    /* HERO uses real background image + overlay; no negative z-index issues */
-    .hero{position:relative;color:#fff;text-align:left;overflow:hidden;
-      background:
-        linear-gradient(180deg, rgba(10,37,94,.60), rgba(2,31,89,.70)),
-        url('https://images.unsplash.com/photo-1555374018-13a8994ab246?auto=format&fit=crop&w=1600&q=80');
-      background-size:cover; background-position:center;}
-    .hero-wrap{position:relative;z-index:1;padding:100px 0;animation:fadeIn 1s ease-in}
-    .hero h1{font-size:clamp(2rem, 3.8vw + .8rem, 3rem);margin-bottom:10px}
-    .hero p{max-width:600px;margin-bottom:20px}
-    .btn{display:inline-block;padding:.9rem 1.1rem;border-radius:14px;font-weight:600;transition:all .3s ease}
-    .btn-primary{background:#fff;color:var(--primary)}
-    .btn-primary:hover{background:#f2f6ff;transform:scale(1.05)}
-    .btn-ghost{border:1px solid #fff;color:#fff}
-    .btn-ghost:hover{background:rgba(255,255,255,.1)}
-
-    section{padding:64px 0}
-    .about{display:grid;grid-template-columns:1fr;gap:28px;align-items:center}
-    @media(min-width:920px){.about{grid-template-columns:1.2fr .8fr}}
-    .about img{box-shadow:var(--shadow);animation:slideIn 1s ease-out}
-
-    .grid-3{display:grid;grid-template-columns:1fr;gap:22px}
-    @media(min-width:760px){.grid-3{grid-template-columns:repeat(3,1fr)}}
-    .card{background:var(--bg);border-radius:var(--radius);padding:22px;box-shadow:var(--shadow);transition:transform .3s ease}
-    .card:hover{transform:translateY(-5px)}
-
-    .testimonials{background:var(--muted)}
-    .quote{background:#fff;padding:22px;border-radius:var(--radius);box-shadow:var(--shadow)}
-
-    .cta{background:linear-gradient(135deg, var(--primary), #204a98);color:#fff;border-radius:var(--radius);padding:28px;display:grid;gap:12px;align-items:center;box-shadow:var(--shadow);animation:fadeInUp 1s ease-out}
-    @media(min-width:820px){.cta{grid-template-columns:1.4fr .6fr}}
-
-    form{display:grid;gap:14px}
-    input,textarea{padding:.85rem 1rem;border-radius:12px;border:1px solid #d7deea}
-    input:focus,textarea:focus{outline:2px solid var(--accent)}
-    .submit{background:var(--primary);color:#fff;font-weight:700;cursor:pointer;transition:all .3s ease}
-    .submit:hover{background:#05205a;transform:translateY(-2px)}
-
-    footer{background:#0e1a36;color:#c9d4ff;padding:28px 0;text-align:center}
-
-    @keyframes fadeIn{0%{opacity:0}100%{opacity:1}}
-    @keyframes fadeInUp{0%{opacity:0;transform:translateY(30px)}100%{opacity:1;transform:translateY(0)}}
-    @keyframes slideIn{0%{opacity:0;transform:translateX(-50px)}100%{opacity:1;transform:translateX(0)}}
-  </style>
+<html><head>
+<link crossorigin="" href="https://fonts.gstatic.com/" rel="preconnect"/>
+<link as="style" href="https://fonts.googleapis.com/css2?display=swap&family=Noto+Sans%3Awght%40400%3B500%3B700%3B900&family=Spline+Sans%3Awght%40400%3B500%3B700" onload="this.rel='stylesheet'" rel="stylesheet"/>
+<meta charset="utf-8"/>
+<title>Stitch Design</title>
+<link href="data:image/x-icon;base64," rel="icon" type="image/x-icon"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<style type="text/tailwindcss">
+      :root {
+        --primary-color: #0d47a1;--secondary-color: #e3f2fd;--text-primary: #1a237e;--text-secondary: #546e7a;--accent-color: #fdd835;}
+    </style>
 </head>
-<body>
-<header>
-  <div class="container nav">
-    <div class="brand"><img src="https://cdn-icons-png.flaticon.com/512/3135/3135715.png" alt="Law icon">Law for Everyone</div>
-    <a class="button" href="#contact">Book Free Consultation</a>
-  </div>
+<body class="bg-gray-50" style='font-family: "Spline Sans", "Noto Sans", sans-serif;'>
+<div class="relative flex size-full min-h-screen flex-col bg-white group/design-root overflow-x-hidden">
+<div class="layout-container flex h-full grow flex-col">
+<header class="flex items-center justify-between whitespace-nowrap border-b border-solid border-b-gray-200 px-10 py-4">
+<div class="flex items-center gap-4 text-[var(--text-primary)]">
+<svg class="h-8 w-8 text-[var(--primary-color)]" fill="none" viewBox="0 0 48 48" xmlns="http://www.w3.org/2000/svg">
+<path d="M4 42.4379C4 42.4379 14.0962 36.0744 24 41.1692C35.0664 46.8624 44 42.2078 44 42.2078L44 7.01134C44 7.01134 35.068 11.6577 24.0031 5.96913C14.0971 0.876274 4 7.27094 4 7.27094L4 42.4379Z" fill="currentColor"></path>
+</svg>
+<h2 class="text-2xl font-bold leading-tight tracking-[-0.015em]">EnforceRight</h2>
+</div>
+<div class="flex flex-1 justify-end gap-8 items-center">
+<nav class="flex items-center gap-8">
+<a class="text-base font-medium leading-normal text-[var(--text-primary)] hover:text-[var(--primary-color)] transition-colors" href="#">About</a>
+<a class="text-base font-medium leading-normal text-[var(--text-primary)] hover:text-[var(--primary-color)] transition-colors" href="#">Services</a>
+<a class="text-base font-medium leading-normal text-[var(--text-primary)] hover:text-[var(--primary-color)] transition-colors" href="#">Resources</a>
+<a class="text-base font-medium leading-normal text-[var(--text-primary)] hover:text-[var(--primary-color)] transition-colors" href="#">Contact</a>
+</nav>
+<button class="flex min-w-[120px] max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-full h-12 px-6 bg-[var(--accent-color)] text-[var(--text-primary)] text-base font-bold leading-normal tracking-[0.015em] hover:bg-yellow-400 transition-colors shadow-md hover:shadow-lg">
+<span class="truncate">Get Started</span>
+</button>
+</div>
 </header>
-
-<section class="hero">
-  <div class="container hero-wrap">
-    <h1>Legal Help Made Simple</h1>
-    <p>We make everyday legal issues clear and manageable for individuals and small businesses. Plain language, fair pricing, and a team that actually calls you back.</p>
-    <a class="btn btn-primary" href="#contact">Book a Free Consultation</a>
-    <a class="btn btn-ghost" href="#services">Explore Our Legal Services</a>
-  </div>
-</section>
-
-<main>
-  <section id="about" class="about container">
-    <div>
-      <h2>Law, without the legalese</h2>
-      <p>Our mission is to make quality legal services accessible to everyone. We explain your options in plain terms, help you decide quickly, and keep costs under control.</p>
-    </div>
-    <img src="download.jpeg" alt="Lawyer meeting with client">
-  </section>
-
-  <section id="services" class="container">
-    <h2>How we can help</h2>
-    <div class="grid-3">
-      <div class="card"><h3>Family Law</h3><p>Separation agreements, parenting plans, uncontested divorce.</p></div>
-      <div class="card"><h3>Employment</h3><p>Severance reviews, workplace issues, contracts.</p></div>
-      <div class="card"><h3>Small Business</h3><p>Incorporation, contracts, website policies, compliance checkups.</p></div>
-    </div>
-  </section>
-
-  <section class="testimonials">
-    <div class="container">
-      <h2>Clients say it best</h2>
-      <div class="grid-3">
-        <div class="quote">“Everything was explained in simple terms. I felt in control.” – Maya R.</div>
-        <div class="quote">“Fast, fair, and no surprises on the bill.” – Daniel P.</div>
-        <div class="quote">“Same‑day consult. Highly recommend.” – L. Chen</div>
-      </div>
-    </div>
-  </section>
-
-  <section class="container cta">
-    <div>
-      <h2>Ready to talk?</h2>
-      <p>Book a free 15‑minute call to understand your options. No obligation.</p>
-    </div>
-    <div><a class="btn btn-primary" href="#contact">Get Started</a></div>
-  </section>
-
-  <section id="contact" class="container">
-    <h2>Contact us</h2>
-    <form onsubmit="event.preventDefault(); alert('Thanks! We\\'ll be in touch shortly.');">
-      <input type="text" placeholder="Your name" required>
-      <input type="email" placeholder="Your email" required>
-      <textarea placeholder="Message" required></textarea>
-      <button class="submit">Send Message</button>
-    </form>
-  </section>
+<main class="flex-1">
+<div class="relative">
+<div class="absolute inset-0 bg-gradient-to-r from-[var(--primary-color)] to-blue-500 opacity-80"></div>
+<div class="relative flex min-h-[600px] flex-col items-center justify-center gap-8 bg-cover bg-center bg-no-repeat px-4 text-center text-white" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuCkOdY1sC69iuWxUTdYK3iCcAVwVTB_DLQqwhUqMPPWNwi6t4H8FSnZ1amklZ7YEtKKYpGngAqa5GDxFRk5CsTJfxRSrWiEggpnvjo7P5oDbEenLFme1QLOo3gwfuiR9f3_EBtOfG5wYajGzLviNNHygeOE9RrquBpMiE30mQL-hQm6navAbNOhJOOD98shGbVaYOa8mjEF0K9PZvch1KCYfb0nmPJaaT3R9dWn4Bc_8nmjnA79CGhr_mKahdKGLnzbqpUEBw8BzfJJ");'>
+<div class="absolute inset-0 bg-[var(--primary-color)] opacity-70"></div>
+<div class="relative z-10 flex flex-col items-center gap-6 max-w-3xl">
+<h1 class="text-5xl font-black leading-tight tracking-tight md:text-6xl">
+                  Maximize Your Recovery. We Get Results.
+                </h1>
+<p class="text-lg font-light leading-relaxed max-w-2xl">
+                  We specialize in judgment enforcement, ensuring you receive the funds you're entitled to. Our expert team navigates the complexities of post-judgment
+                  collection, providing efficient and effective solutions.
+                </p>
+<button class="mt-4 flex min-w-[150px] max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-full h-14 px-8 bg-[var(--accent-color)] text-[var(--text-primary)] text-lg font-bold leading-normal tracking-[0.015em] hover:bg-yellow-400 transition-colors shadow-lg hover:shadow-xl">
+<span class="truncate">Start Your Collection</span>
+</button>
+</div>
+</div>
+</div>
+<div class="px-10 md:px-20 lg:px-40 py-20 bg-white">
+<div class="max-w-6xl mx-auto">
+<h2 class="text-4xl font-bold text-center text-[var(--text-primary)] mb-12">Our Services</h2>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-10">
+<div class="flex flex-col items-center text-center gap-4 p-8 rounded-xl bg-[var(--secondary-color)] transition-all duration-300 hover:shadow-2xl hover:-translate-y-2">
+<div class="text-[var(--primary-color)] bg-white rounded-full p-4 inline-block">
+<svg fill="currentColor" height="48px" viewBox="0 0 256 256" width="48px" xmlns="http://www.w3.org/2000/svg">
+<path d="M243.32,116.69l-16-16a16,16,0,0,0-20.84-1.53L156.84,49.52a16,16,0,0,0-1.52-20.84l-16-16a16,16,0,0,0-22.63,0l-64,64a16,16,0,0,0,0,22.63l16,16a16,16,0,0,0,20.83,1.52L96.69,124,31.31,189.38A25,25,0,0,0,66.63,224.7L132,159.32l7.17,7.16a16,16,0,0,0,1.52,20.84l16,16a16,16,0,0,0,22.63,0l64-64A16,16,0,0,0,243.32,116.69ZM80,104,64,88l64-64,16,16ZM55.32,213.38a9,9,0,0,1-12.69,0,9,9,0,0,1,0-12.68L108,135.32,120.69,148ZM101,105.66,145.66,61,195,110.34,150.35,155ZM168,192l-16-16,4-4h0l56-56h0l4-4,16,16Z"></path>
+</svg>
+</div>
+<h3 class="text-2xl font-bold text-[var(--text-primary)]">Judgment Enforcement</h3>
+<p class="text-base text-[var(--text-secondary)]">We employ proven strategies to enforce judgments, including wage garnishments, bank levies, and property liens.</p>
+</div>
+<div class="flex flex-col items-center text-center gap-4 p-8 rounded-xl bg-[var(--secondary-color)] transition-all duration-300 hover:shadow-2xl hover:-translate-y-2">
+<div class="text-[var(--primary-color)] bg-white rounded-full p-4 inline-block">
+<svg fill="currentColor" height="48px" viewBox="0 0 256 256" width="48px" xmlns="http://www.w3.org/2000/svg">
+<path d="M229.66,218.34l-50.07-50.06a88.11,88.11,0,1,0-11.31,11.31l50.06,50.07a8,8,0,0,0,11.32-11.32ZM40,112a72,72,0,1,1,72,72A72.08,72.08,0,0,1,40,112Z"></path>
+</svg>
+</div>
+<h3 class="text-2xl font-bold text-[var(--text-primary)]">Asset Investigation</h3>
+<p class="text-base text-[var(--text-secondary)]">Our thorough asset investigations uncover hidden assets, ensuring all available resources are considered for recovery.</p>
+</div>
+<div class="flex flex-col items-center text-center gap-4 p-8 rounded-xl bg-[var(--secondary-color)] transition-all duration-300 hover:shadow-2xl hover:-translate-y-2">
+<div class="text-[var(--primary-color)] bg-white rounded-full p-4 inline-block">
+<svg fill="currentColor" height="48px" viewBox="0 0 256 256" width="48px" xmlns="http://www.w3.org/2000/svg">
+<path d="M119.76,217.94A8,8,0,0,1,112,224a8.13,8.13,0,0,1-2-.24l-32-8a8,8,0,0,1-2.5-1.11l-24-16a8,8,0,1,1,8.88-13.31l22.84,15.23,30.66,7.67A8,8,0,0,1,119.76,217.94Zm132.69-96.46a15.89,15.89,0,0,1-8,9.25l-23.68,11.84-55.08,55.09a8,8,0,0,1-7.6,2.1l-64-16a8.06,8.06,0,0,1-2.71-1.25L35.86,142.87,11.58,130.73a16,16,0,0,1-7.16-21.46L29.27,59.58h0a16,16,0,0,1,21.46-7.16l22.06,11,53-15.14a8,8,0,0,1,4.4,0l53,15.14,22.06-11a16,16,0,0,1,21.46,7.16l24.85,49.69A15.9,15.9,0,0,1,252.45,121.48Zm-46.18,12.94L179.06,80H147.24L104,122c12.66,8.09,32.51,10.32,50.32-7.63a8,8,0,0,1,10.68-.61l34.41,27.57Zm-187.54-18,17.69,8.85L61.27,75.58,43.58,66.73ZM188,152.66l-27.71-22.19c-19.54,16-44.35,18.11-64.91,5a16,16,0,0,1-2.72-24.82.6.6,0,0,1,.08-.08L137.6,67.06,128,64.32,77.58,78.73,50.21,133.46l49.2,35.15,58.14,14.53Zm49.24-36.24L212.42,66.73l-17.69,8.85,24.85,49.69Z"></path>
+</svg>
+</div>
+<h3 class="text-2xl font-bold text-[var(--text-primary)]">Settlement Negotiation</h3>
+<p class="text-base text-[var(--text-secondary)]">We skillfully negotiate settlements with debtors, aiming for favorable outcomes that expedite the recovery process.</p>
+</div>
+</div>
+</div>
+</div>
+<div class="px-10 md:px-20 lg:px-40 py-20 bg-gray-50">
+<div class="max-w-6xl mx-auto">
+<h2 class="text-4xl font-bold text-center text-[var(--text-primary)] mb-12">Client Success Stories</h2>
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10">
+<div class="flex flex-col gap-4 bg-white p-8 rounded-lg shadow-md">
+<div class="flex items-center gap-4">
+<div class="bg-center bg-no-repeat aspect-square bg-cover rounded-full size-12" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuDSYF5AlvcimQeBSnmfoXjuAjYUcqFixlf1ueW0cY9LFeOvznwl9wR9tIM9JMRsjnjYSEorshlW1BMM8AdDstD8nIr6YCpvmzpAVUswS-Br3vB6dl9mAqzBP-Fl5z-jkzBYeRhpbE8hxa8DnsvQ3JyRYEth1yG9V7_bn3jQub8lXAytl97AsXdAlgOKtM1vcuM5DoLJUOH5s5sHTELjbxaLtCEie0gel1nyryX9iP6dgPn6ZwSXgMTddRvzmVde9ThSqvVFn7Se0m4v");'></div>
+<div>
+<p class="text-[var(--text-primary)] text-lg font-bold">Sarah M.</p>
+<p class="text-[var(--text-secondary)] text-sm">August 15, 2023</p>
+</div>
+</div>
+<div class="flex gap-1 text-[var(--accent-color)]">
+<svg fill="currentColor" height="20px" viewBox="0 0 256 256" width="20px" xmlns="http://www.w3.org/2000/svg"><path d="M234.5,114.38l-45.1,39.36,13.51,58.6a16,16,0,0,1-23.84,17.34l-51.11-31-51,31a16,16,0,0,1-23.84-17.34L66.61,153.8,21.5,114.38a16,16,0,0,1,9.11-28.06l59.46-5.15,23.21-55.36a15.95,15.95,0,0,1,29.44,0h0L166,81.17l59.44,5.15a16,16,0,0,1,9.11,28.06Z"></path></svg>
+<svg fill="currentColor" height="20px" viewBox="0 0 256 256" width="20px" xmlns="http://www.w3.org/2000/svg"><path d="M234.5,114.38l-45.1,39.36,13.51,58.6a16,16,0,0,1-23.84,17.34l-51.11-31-51,31a16,16,0,0,1-23.84-17.34L66.61,153.8,21.5,114.38a16,16,0,0,1,9.11-28.06l59.46-5.15,23.21-55.36a15.95,15.95,0,0,1,29.44,0h0L166,81.17l59.44,5.15a16,16,0,0,1,9.11,28.06Z"></path></svg>
+<svg fill="currentColor" height="20px" viewBox="0 0 256 256" width="20px" xmlns="http://www.w3.org/2000/svg"><path d="M234.5,114.38l-45.1,39.36,13.51,58.6a16,16,0,0,1-23.84,17.34l-51.11-31-51,31a16,16,0,0,1-23.84-17.34L66.61,153.8,21.5,114.38a16,16,0,0,1,9.11-28.06l59.46-5.15,23.21-55.36a15.95,15.95,0,0,1,29.44,0h0L166,81.17l59.44,5.15a16,16,0,0,1,9.11,28.06Z"></path></svg>
+<svg fill="currentColor" height="20px" viewBox="0 0 256 256" width="20px" xmlns="http://www.w3.org/2000/svg"><path d="M234.5,114.38l-45.1,39.36,13.51,58.6a16,16,0,0,1-23.84,17.34l-51.11-31-51,31a16,16,0,0,1-23.84-17.34L66.61,153.8,21.5,114.38a16,16,0,0,1,9.11-28.06l59.46-5.15,23.21-55.36a15.95,15.95,0,0,1,29.44,0h0L166,81.17l59.44,5.15a16,16,0,0,1,9.11,28.06Z"></path></svg>
+<svg fill="currentColor" height="20px" viewBox="0 0 256 256" width="20px" xmlns="http://www.w3.org/2000/svg"><path d="M234.5,114.38l-45.1,39.36,13.51,58.6a16,16,0,0,1-23.84,17.34l-51.11-31-51,31a16,16,0,0,1-23.84-17.34L66.61,153.8,21.5,114.38a16,16,0,0,1,9.11-28.06l59.46-5.15,23.21-55.36a15.95,15.95,0,0,1,29.44,0h0L166,81.17l59.44,5.15a16,16,0,0,1,9.11,28.06Z"></path></svg>
+</div>
+<p class="text-[var(--text-secondary)] text-base leading-relaxed italic">"EnforceRight was instrumental in recovering a significant judgment for my business. Their professionalism and persistence were truly impressive."</p>
+</div>
+<div class="flex flex-col gap-4 bg-white p-8 rounded-lg shadow-md">
+<div class="flex items-center gap-4">
+<div class="bg-center bg-no-repeat aspect-square bg-cover rounded-full size-12" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuByJvjEXpGCVDtebGlGsQyh6KY2RZaXNHJqyZ7M_KsbAeix7cJckVFhfgO1k8p5CsE1NJOEWZR_KGybhTblI2aUGaG6hMu5qzF9ZjtYmxBkmMEZ9winCj-Ein__x_16WjRAeOjlo5HXmfFUtrllI_yhdur91T7ZRpi3-9ydSoRNT6NyWmMwC85hb-UnpvnGDu3r3J7qqFNhYhDPgKeeob-BlTN68cGvkPE-wEUCfydN78fEjhzhu5__JJsCR1ktvotokn1SL0xWB2aD");'></div>
+<div>
+<p class="text-[var(--text-primary)] text-lg font-bold">Robert K.</p>
+<p class="text-[var(--text-secondary)] text-sm">July 22, 2023</p>
+</div>
+</div>
+<div class="flex gap-1 text-[var(--accent-color)]">
+<svg fill="currentColor" height="20px" viewBox="0 0 256 256" width="20px" xmlns="http://www.w3.org/2000/svg"><path d="M234.5,114.38l-45.1,39.36,13.51,58.6a16,16,0,0,1-23.84,17.34l-51.11-31-51,31a16,16,0,0,1-23.84-17.34L66.61,153.8,21.5,114.38a16,16,0,0,1,9.11-28.06l59.46-5.15,23.21-55.36a15.95,15.95,0,0,1,29.44,0h0L166,81.17l59.44,5.15a16,16,0,0,1,9.11,28.06Z"></path></svg>
+<svg fill="currentColor" height="20px" viewBox="0 0 256 256" width="20px" xmlns="http://www.w3.org/2000/svg"><path d="M234.5,114.38l-45.1,39.36,13.51,58.6a16,16,0,0,1-23.84,17.34l-51.11-31-51,31a16,16,0,0,1-23.84-17.34L66.61,153.8,21.5,114.38a16,16,0,0,1,9.11-28.06l59.46-5.15,23.21-55.36a15.95,15.95,0,0,1,29.44,0h0L166,81.17l59.44,5.15a16,16,0,0,1,9.11,28.06Z"></path></svg>
+<svg fill="currentColor" height="20px" viewBox="0 0 256 256" width="20px" xmlns="http://www.w3.org/2000/svg"><path d="M234.5,114.38l-45.1,39.36,13.51,58.6a16,16,0,0,1-23.84,17.34l-51.11-31-51,31a16,16,0,0,1-23.84-17.34L66.61,153.8,21.5,114.38a16,16,0,0,1,9.11-28.06l59.46-5.15,23.21-55.36a15.95,15.95,0,0,1,29.44,0h0L166,81.17l59.44,5.15a16,16,0,0,1,9.11,28.06Z"></path></svg>
+<svg fill="currentColor" height="20px" viewBox="0 0 256 256" width="20px" xmlns="http://www.w3.org/2000/svg"><path d="M234.5,114.38l-45.1,39.36,13.51,58.6a16,16,0,0,1-23.84,17.34l-51.11-31-51,31a16,16,0,0,1-23.84-17.34L66.61,153.8,21.5,114.38a16,16,0,0,1,9.11-28.06l59.46-5.15,23.21-55.36a15.95,15.95,0,0,1,29.44,0h0L166,81.17l59.44,5.15a16,16,0,0,1,9.11,28.06Z"></path></svg>
+<svg fill="currentColor" height="20px" viewBox="0 0 256 256" width="20px" xmlns="http://www.w3.org/2000/svg"><path d="M234.5,114.38l-45.1,39.36,13.51,58.6a16,16,0,0,1-23.84,17.34l-51.11-31-51,31a16,16,0,0,1-23.84-17.34L66.61,153.8,21.5,114.38a16,16,0,0,1,9.11-28.06l59.46-5.15,23.21-55.36a15.95,15.95,0,0,1,29.44,0h0L166,81.17l59.44,5.15a16,16,0,0,1,9.11,28.06Z"></path></svg>
+</div>
+<p class="text-[var(--text-secondary)] text-base leading-relaxed italic">"I highly recommend EnforceRight for their expertise in asset investigation. They uncovered assets I never knew existed."</p>
+</div>
+<div class="flex flex-col gap-4 bg-white p-8 rounded-lg shadow-md">
+<div class="flex items-center gap-4">
+<div class="bg-center bg-no-repeat aspect-square bg-cover rounded-full size-12" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuD_iqc-GtTQUAfT2xM1DJps8MBDkjA281zT_ago5TvKV3x_FwATTILhFATD3ubw7b64OT9f4g8dSnb3E3TSVmZh2uawtdyOwlsn52ctojeX0LmuuZ4ELQRVSxMMZO10pDyl3LChgNCaptiA9LPLm3LfZuPJwE0HTOBn5PirWmrPI6kftpCg-22Xt70wmoywv_MJIMA3eHhN2hMNf7WzIwK5sZsDabiSQcSs1mdd8lcsMEmbQ6aWfpuV3HH41NpS07-SuMc8O0Asn4S-");'></div>
+<div>
+<p class="text-[var(--text-primary)] text-lg font-bold">Emily L.</p>
+<p class="text-[var(--text-secondary)] text-sm">June 10, 2023</p>
+</div>
+</div>
+<div class="flex gap-1 text-[var(--accent-color)]">
+<svg fill="currentColor" height="20px" viewBox="0 0 256 256" width="20px" xmlns="http://www.w3.org/2000/svg"><path d="M234.5,114.38l-45.1,39.36,13.51,58.6a16,16,0,0,1-23.84,17.34l-51.11-31-51,31a16,16,0,0,1-23.84-17.34L66.61,153.8,21.5,114.38a16,16,0,0,1,9.11-28.06l59.46-5.15,23.21-55.36a15.95,15.95,0,0,1,29.44,0h0L166,81.17l59.44,5.15a16,16,0,0,1,9.11,28.06Z"></path></svg>
+<svg fill="currentColor" height="20px" viewBox="0 0 256 256" width="20px" xmlns="http://www.w3.org/2000/svg"><path d="M234.5,114.38l-45.1,39.36,13.51,58.6a16,16,0,0,1-23.84,17.34l-51.11-31-51,31a16,16,0,0,1-23.84-17.34L66.61,153.8,21.5,114.38a16,16,0,0,1,9.11-28.06l59.46-5.15,23.21-55.36a15.95,15.95,0,0,1,29.44,0h0L166,81.17l59.44,5.15a16,16,0,0,1,9.11,28.06Z"></path></svg>
+<svg fill="currentColor" height="20px" viewBox="0 0 256 256" width="20px" xmlns="http://www.w3.org/2000/svg"><path d="M234.5,114.38l-45.1,39.36,13.51,58.6a16,16,0,0,1-23.84,17.34l-51.11-31-51,31a16,16,0,0,1-23.84-17.34L66.61,153.8,21.5,114.38a16,16,0,0,1,9.11-28.06l59.46-5.15,23.21-55.36a15.95,15.95,0,0,1,29.44,0h0L166,81.17l59.44,5.15a16,16,0,0,1,9.11,28.06Z"></path></svg>
+<svg fill="currentColor" height="20px" viewBox="0 0 256 256" width="20px" xmlns="http://www.w3.org/2000/svg"><path d="M234.5,114.38l-45.1,39.36,13.51,58.6a16,16,0,0,1-23.84,17.34l-51.11-31-51,31a16,16,0,0,1-23.84-17.34L66.61,153.8,21.5,114.38a16,16,0,0,1,9.11-28.06l59.46-5.15,23.21-55.36a15.95,15.95,0,0,1,29.44,0h0L166,81.17l59.44,5.15a16,16,0,0,1,9.11,28.06Z"></path></svg>
+<svg fill="currentColor" height="20px" viewBox="0 0 256 256" width="20px" xmlns="http://www.w3.org/2000/svg"><path d="M234.5,114.38l-45.1,39.36,13.51,58.6a16,16,0,0,1-23.84,17.34l-51.11-31-51,31a16,16,0,0,1-23.84-17.34L66.61,153.8,21.5,114.38a16,16,0,0,1,9.11-28.06l59.46-5.15,23.21-55.36a15.95,15.95,0,0,1,29.44,0h0L166,81.17l59.44,5.15a16,16,0,0,1,9.11,28.06Z"></path></svg>
+</div>
+<p class="text-[var(--text-secondary)] text-base leading-relaxed italic">"Thanks to EnforceRight's negotiation skills, we reached a settlement that exceeded my expectations. Their service was invaluable."</p>
+</div>
+</div>
+</div>
+</div>
+<div class="bg-white py-20">
+<div class="max-w-4xl mx-auto text-center px-4">
+<h2 class="text-4xl font-bold text-[var(--text-primary)] mb-4">Ready to Recover Your Funds?</h2>
+<p class="text-lg text-[var(--text-secondary)] mb-8 max-w-2xl mx-auto">Don't let your judgments go uncollected. Contact our team today for a free consultation and learn how we can help you recover what you are owed.</p>
+<button class="flex min-w-[200px] max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-full h-14 px-8 bg-[var(--accent-color)] text-[var(--text-primary)] text-lg font-bold leading-normal tracking-[0.015em] hover:bg-yellow-400 transition-colors shadow-lg hover:shadow-xl mx-auto">
+<span class="truncate">Schedule a Consultation</span>
+</button>
+</div>
+</div>
 </main>
-
-<footer>
-  © <span id="year"></span> Law for Everyone. All rights reserved.
+<footer class="bg-[var(--primary-color)] text-white">
+<div class="max-w-6xl mx-auto py-12 px-10">
+<div class="flex flex-col md:flex-row justify-between items-center gap-8">
+<div class="flex items-center gap-4 text-white">
+<svg class="h-8 w-8" fill="none" viewBox="0 0 48 48" xmlns="http://www.w3.org/2000/svg">
+<path d="M4 42.4379C4 42.4379 14.0962 36.0744 24 41.1692C35.0664 46.8624 44 42.2078 44 42.2078L44 7.01134C44 7.01134 35.068 11.6577 24.0031 5.96913C14.0971 0.876274 4 7.27094 4 7.27094L4 42.4379Z" fill="currentColor"></path>
+</svg>
+<h2 class="text-2xl font-bold leading-tight tracking-[-0.015em]">EnforceRight</h2>
+</div>
+<nav class="flex flex-wrap justify-center gap-6">
+<a class="text-base font-normal leading-normal hover:text-[var(--accent-color)] transition-colors" href="#">About</a>
+<a class="text-base font-normal leading-normal hover:text-[var(--accent-color)] transition-colors" href="#">Services</a>
+<a class="text-base font-normal leading-normal hover:text-[var(--accent-color)] transition-colors" href="#">Resources</a>
+<a class="text-base font-normal leading-normal hover:atext-[var(--accent-color)] transition-colors" href="#">Contact</a>
+<a class="text-base font-normal leading-normal hover:text-[var(--accent-color)] transition-colors" href="#">Privacy Policy</a>
+</nav>
+</div>
+<div class="mt-8 border-t border-blue-800 pt-8 text-center text-gray-300">
+<p>© 2023 EnforceRight. All rights reserved.</p>
+</div>
+</div>
 </footer>
-<script>document.getElementById('year').textContent=new Date().getFullYear();</script>
-</body>
-</html>
+</div>
+</div>
+
+</body></html>
